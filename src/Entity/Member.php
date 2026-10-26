@@ -22,6 +22,9 @@ class Member extends User
     #[ORM\Column(length: 255)]
     private ?string $adresse = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $fonction = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Member extends User
     public function setAdresse(string $adresse): static
     {
         $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getFonction(): ?string
+    {
+        return $this->fonction;
+    }
+
+    public function setFonction(string $fonction): static
+    {
+        $this->fonction = $fonction;
 
         return $this;
     }
