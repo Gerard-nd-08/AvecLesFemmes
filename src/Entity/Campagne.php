@@ -30,6 +30,9 @@ class Campagne
     #[ORM\Column(length: 255)]
     private ?string $type = null;
 
+    #[ORM\ManyToOne(inversedBy: 'Campagnes')]
+    private ?ModeCotisation $modeCotisation = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +94,18 @@ class Campagne
     public function setType(string $type): static
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getModeCotisation(): ?ModeCotisation
+    {
+        return $this->modeCotisation;
+    }
+
+    public function setModeCotisation(?ModeCotisation $modeCotisation): static
+    {
+        $this->modeCotisation = $modeCotisation;
 
         return $this;
     }

@@ -21,6 +21,9 @@ class Member extends User
     #[ORM\Column(length: 255)]
     private ?string $fonction = null;
 
+    #[ORM\ManyToOne(inversedBy: 'membres')]
+    private ?ModeCotisation $modeCotisation = null;
+
 
     public function getNom(): ?string
     {
@@ -66,6 +69,18 @@ class Member extends User
     public function setFonction(string $fonction): static
     {
         $this->fonction = $fonction;
+
+        return $this;
+    }
+
+    public function getModeCotisation(): ?ModeCotisation
+    {
+        return $this->modeCotisation;
+    }
+
+    public function setModeCotisation(?ModeCotisation $modeCotisation): static
+    {
+        $this->modeCotisation = $modeCotisation;
 
         return $this;
     }
