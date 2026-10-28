@@ -87,6 +87,7 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+        "gerardndiaye:make:enum": "@php bin/console make:enum",
         "gerardndiaye:db:create": [
             "@php bin/console doctrine:database:drop --if-exists --force",
             "@php bin/console doctrine:database:create"
