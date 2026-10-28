@@ -24,8 +24,8 @@ class Campagne
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTime $dateFin = null;
 
-    #[ORM\Column(type: Types::NUMBER)]
-    private ?Number $montant = null;
+    #[ORM\Column(type: 'decimal', precision: 10, scale: 2)]
+    private ?string $montant = null;
 
     #[ORM\Column(length: 255)]
     private ?string $type = null;
