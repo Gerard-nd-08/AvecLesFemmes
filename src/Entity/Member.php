@@ -24,6 +24,10 @@ class Member extends User
     #[ORM\ManyToOne(inversedBy: 'membres')]
     private ?ModeCotisation $modeCotisation = null;
 
+    #[ORM\ManyToOne(inversedBy: 'members')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Groupement $groupement = null;
+
 
     public function getNom(): ?string
     {
@@ -81,6 +85,18 @@ class Member extends User
     public function setModeCotisation(?ModeCotisation $modeCotisation): static
     {
         $this->modeCotisation = $modeCotisation;
+
+        return $this;
+    }
+
+    public function getGroupement(): ?Groupement
+    {
+        return $this->groupement;
+    }
+
+    public function setGroupement(?Groupement $groupement): static
+    {
+        $this->groupement = $groupement;
 
         return $this;
     }
