@@ -10,7 +10,7 @@ enum StatutExercice: string
     public function label(): string
     {
         return match ($this) {
-            self::ENCOURS => 'En cours',
+            self::EN_COURS => 'En cours',
             self::CLOTURE => 'Clôturé',
         };
     }

@@ -30,7 +30,7 @@ class Exercice
     private ?Groupement $groupement = null;
 
     #[ORM\Column(enumType: StatutExercice::class)]
-    private StatutExercice $statut = StatutExercice::ENCOURS;
+    private StatutExercice $statut = StatutExercice::EN_COURS;
 
     public function getId(): ?int
     {
