@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Groupement{% endblock %}
+
+{% block body %}
+    <h1>Groupement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ groupement.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ groupement.nom }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ groupement.tel }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ groupement.adresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_groupement_index') }}">back to list</a>
+
+    <a href="{{ path('app_groupement_edit', {'id': groupement.id}) }}">edit</a>
+
+    {{ include('groupement/_delete_form.html.twig') }}
+{% endblock %}
